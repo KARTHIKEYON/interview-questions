@@ -1,0 +1,24 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] arg){
+        Scanner sc = new Scanner(System.in);
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        int lcm=(a*b);
+        while(b!=0){
+            int t=b;
+            b=a%b;
+            a=t;
+            
+        }
+        System.out.println("the gcd of two number is "+a);
+        lcm=lcm/a;
+        System.out.println("the lcm of 2 number is "+lcm);
+        }
+    }
+
+output:
+14
+8
+the gcd of two number is 2
+the lcm of 2 number is 56
