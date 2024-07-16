@@ -1,0 +1,20 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] arg){
+        Scanner sc= new Scanner(System.in);
+        int veh=sc.nextInt();
+        int whe=sc.nextInt();
+        float res=((4*veh)-whe)/2;
+        if(whe>=2 && whe%2==0 && veh<whe){
+            System.out.println("two wheeler: "+(int)(res)+"  four wheeler: "+(int)(veh-res));
+        }
+        else{
+            System.out.println("invalid input");
+        }
+    }
+}
+
+output:
+200
+540
+two wheeler: 130  four wheeler: 70
