@@ -1,0 +1,15 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] arg){
+        Scanner sc = new Scanner(System.in);
+        int min=sc.nextInt();
+        int max=sc.nextInt();
+        System.out.println("random value between min and max is"+(int)(Math.random()*(max-min+1)+min));
+    }
+    
+}
+
+output:
+10
+20
+random value between min and max is13
