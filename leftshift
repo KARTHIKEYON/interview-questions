@@ -1,0 +1,40 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] arg){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the shift");
+        int shift=sc.nextInt();
+        System.out.println("enter the size of array:");
+        int size=sc.nextInt();
+        int arr[]=new int[size];
+        for(int i=0;i<size;i++){
+            arr[i]=sc.nextInt();
+        }
+        shift = shift%size;
+        while(shift>0){
+            int first = arr[0];
+            for(int j=0;j<size-1;j++){
+                arr[j]=arr[j+1];
+            }
+            arr[size-1]=first;
+            shift--;
+        }
+         System.out.println("Array after left shift:");
+        for (int i = 0; i < size; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
+
+output:
+Enter the shift
+6
+enter the size of array:
+5
+1
+2
+3
+4
+5
+Array after left shift:
+2 3 4 5 1 
