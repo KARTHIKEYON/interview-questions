@@ -1,0 +1,60 @@
+import java.util.Scanner;
+
+public class RightShiftArray {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the size of the array
+        System.out.print("Enter the size of the array: ");
+        int size = scanner.nextInt();
+
+        // Initialize the array
+        int[] array = new int[size];
+
+        // Read the elements of the array
+        System.out.println("Enter the elements of the array:");
+        for (int i = 0; i < size; i++) {
+            array[i] = scanner.nextInt();
+        }
+
+        // Read the number of positions to shift
+        System.out.print("Enter the number of positions to shift: ");
+        int shift = scanner.nextInt();
+
+        // Perform the right shift
+        shift = shift % size; // Handle cases where shift is greater than array size
+        if (shift != 0) {
+            // Create a temporary array to hold the shifted elements
+            int[] temp = new int[size];
+
+            // Copy the shifted elements to the temporary array
+            for (int i = 0; i < size; i++) {
+                temp[(i + shift) % size] = array[i];
+            }
+
+            // Copy the temporary array back to the original array
+            for (int i = 0; i < size; i++) {
+                array[i] = temp[i];
+            }
+        }
+
+        // Print the shifted array
+        System.out.println("Array after right shift:");
+        for (int i = 0; i < size; i++) {
+            System.out.print(array[i] + " ");
+        }
+    }
+}
+
+
+output:
+Enter the size of the array: 5
+Enter the elements of the array:
+3
+1
+4
+1
+5
+Enter the number of positions to shift: 2
+Array after right shift:
+1 5 3 1 4 
